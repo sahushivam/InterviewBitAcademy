@@ -1,0 +1,9 @@
+1-Tries on multiple machines
+2-Tries with top five suggestions
+3-Find the root of polynomial in which
+	a)order of precedence of operator is reversed
+	b)0^0 =1
+	c)Associativity of exponention is right
+	d)negation of a number is normal,its precedence is highest
+
+
