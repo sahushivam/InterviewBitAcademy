@@ -1,0 +1,46 @@
+Q1- There are n person in a village and they are identified by number and they belong to some village
+
+1,3 --> S1
+5	--> S2
+2 	--> S3
+4,7,9->	S4
+
+//parent is initialized with -1
+
+ll Find(ll v) {
+    if (parent[v]==-1)
+        return v;
+    parent[v] = Find(parent[v]);
+    return parent[v];
+}
+
+int Find(int x) {
+	int tx, rx;
+	tx = x;
+	while (parent[tx] > 0)
+		tx = parent[tx];
+
+	while (x != tx) {//compression
+		rx = parent[x];
+		parent[x] = tx;//swap parent[x] and tx
+		x = rx;
+	}
+	
+	return tx;
+}
+
+
+void Union(int i, int j) {
+	int ti = Find(i), tj = Find(j);
+	if (ti == tj)
+		return;
+	ncc--;
+	if (size[ti] >= size[tj]) {
+		parent[tj] = ti;
+		size[ti] += size[tj];
+	} else {
+		parent[ti] = tj;
+		size[tj] += size[ti];
+	}
+}
+

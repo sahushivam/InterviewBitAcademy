@@ -1,0 +1,33 @@
+Two Pointer
+	1-Given sorted array find number of pairs such that A[i]-A[j]=k
+
+	Approach- Put pointer at 0 and 1.
+
+	2- Given sorted array find number of distinct configuration that have area less than B
+
+	Approach- put pointer i at 0 and j at n-1
+	while(i<=j)
+		if(a[i]*a[j]>B) j--;
+		else ans+=(j-i+1)*2 - 1;
+
+	3- Given three sorted array a,b,c minimize the equation
+		max(ai,bj,ck) - min(ai,bj,ck)
+
+	4- Given sorted array return 1 if there is a subarray whose sum is k
+		Initialize i=0 and j=0 
+		if(sum[i...j]>k) i++; sum-=a[i]
+		else j++; sum+=a[j]
+
+	5- Given three prime p1,p2,p3 and an integer k, find first k smallest integer which have only p1,p2,p3 in their prime factorization
+
+		i <- 0
+		j <- 0
+		k <- 0
+
+		a[0]=0;
+		min=min(a[i]*p1,a[j]*p2,a[k]*p3) //increase the index whose contender was minimum
+
+		for removing the duplicates we can see the last inserted element as element are being inserted in sorted order
+
+		
+

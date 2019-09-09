@@ -1,0 +1,62 @@
+//Building a Interanet Search Engine
+
+How to scale the system which can handle across many machine?
+
+In bigger system what are the component that you need?
+
+Why you should learn system design?
+1-Interview
+2-Scale when need come
+
+System design is designing system so that it can work across many system.
+
+System design is divided into two parts
+1- Low level system design
+2- High level system design
+
+Why can't we have a single system design?
+
+CAP theorem-
+
+Below is System design on backend side-
+	1- Entry point is client
+	2- Request goes to DNS Lookup
+	3- Load Balancer understands that client has requested for something
+	4- It assign some machine(magic box)
+
+How can we multiple load balancer because IP can be assigned to only one IP?
+Ans- We have multiple IP and random IP is assigned each time,and that load balancer is assigned
+
+Breaking the magic-box
+Horizontal Scaling
+Vertical Scaling
+
+Routing mechanism in Magic Box-
+1- Round Robin -Can't be tackled as machine may be of different capacity. It can be tackled by having virtual machine.(Can do weighted round robin)
+
+2- Using Health status of available-
+
+
+Video-2
+
+Availabitity- Should be available all the time
+Reliability- Error-prone
+Efficiency- Latency and throughput
+Manageability- How easy is to manage the system
+Consistency-All the nodes sees the same data at the same time.
+
+
+How would you split the data?
+	Hash(ID)%n
+	If I get one more server than you have to copy all the entries to a new server.
+
+	We can do maping of every id with machine. Similar to paging and multi level paging in OS.
+
+	Hot server are the server that get a lot of request.
+
+	The latency will increase in mapping approach,
+
+	Consistent Hashing
+
+
+// The Maximam gap problem

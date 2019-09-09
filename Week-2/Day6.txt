@@ -1,0 +1,42 @@
+1-Given 2-D matrix of N*N, give the sum of all submatrix.
+	Bruteforce- O(n3)
+
+	O(n2)- To define a particular matrix we have a unique top-left and unique bottom-right, so number of choices for the unique top-left and bottom right is 
+
+	number of choice for top-left is (i+1)*(j+1)
+	and for bottom right it is (N-i)*(N-j)
+	so number of rectangles possible containing i,j is (i+1)*(j+1)*(N-i)*(N-j)
+
+2- Given Q queries find the sum of submatrix given top-left and bottom-right
+	//Precomputation
+
+3- Given a matrix in which every row and column is sorted, find the maximum sum of submatrix.
+
+// bottom right will always be (n-1,m-1), find the suffix sum 
+
+4- Given a matrix in which every row and column is sorted, find the coordinates of a given number
+
+// in O(n) start from the top right corner, if the target is greater than i++ else j--
+
+5- Max number of chunks to sort the array
+	//build a minimum matrix from n-1 to 0 in b[i] 
+	// start traversing from 1 - n-1,  if(b[i]<mx_so_far) then include it,else increment the count
+
+	Going from left to right, if there is a number to the right that is less than the current max of the chunk or if the chunk is empty, then the next number to the right has to be included in the current chunk. Now if all the numbers to the right are at least as large as all numbers in the current chunk, then in an optimal solution, we can always split the current chunk out.
+
+6- Rearrange the array such that A[i] = j is changed to A[j] = i for all i and j form 0 to N-1.
+	every value is incremented by (arr[arr[i]] % n)*n
+	The important thing is, after the increment operation
+	of first step, every element holds both old values and new values. 
+	Old value can be obtained by arr[i]%n and new value can be obtained
+	by arr[i]/n.
+
+Homework
+
+7- Minimum swaps required to bring all elements less than or equal to k together
+
+	Use sliding window approach,
+	first find the total number of element less than or equal to k, and then use sliding window to keep track of element less than k in that window.
+
+8- Alternate positive and negative elements 
+	//use right rotation between two out_of_place element if found.
