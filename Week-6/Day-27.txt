@@ -1,0 +1,38 @@
+Day-27 Linked list
+	Swap two nodes of Linked List
+	Reverse Linked List of size k
+	
+		ListNode* Solution::reverseList(ListNode* A, int B) {
+	    ListNode* current = A;  
+	    ListNode* next = NULL;  
+	    ListNode* prev = NULL;  
+	    int count = 0;  
+	      
+	    while (current != NULL && count < B)  
+	    {  
+	        next = current->next;  
+	        current->next = prev;  
+	        prev = current;  
+	        current = next;  
+	        count++;  
+	    }  
+	    if (next != NULL)  
+	    A->next = reverseList(next, B);  
+	    return prev; 
+	}
+
+	Reverse Linked List by recursion
+		reverse(head)
+		{
+			node *first,*rest;
+			if(head==null) return
+			first=head, rest=head->next
+			if(rest==null) return 
+			reverse(rest)
+			rest->next=head
+			first->next=null
+			head=rest;
+		}
+			
+	Detect loop in the ll and find it starting point
+

@@ -42,3 +42,9 @@ Searching-2
 			if(1+M+ M^2 + ... + M^i < N) low = mid+1
 			else if(1+M+ M^2 + ... + M^i > N) high = mid-1
 
+(Important)
+	6- Given a family of string in which s[0]=0
+		s[i]=s[i-1]+ "0" + ~s[i-1]
+		find kth character of nth string.
+
+	Hint- Bit will change when we move to right.

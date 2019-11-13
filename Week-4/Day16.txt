@@ -1,0 +1,77 @@
+Merge Sort
+	Important
+		- merge procedure
+
+
+			long long merge(vector<int> &A, int left,int mid, int right) 
+			{ 
+				int i, j, k;  
+			    long long inv_count = 0;  
+			    int temp[A.size()];
+			    i = left; 
+			    j = mid; 
+			    k = left; 
+			    while ((i <= mid - 1) && (j <= right))  
+			    {  
+			        if (A[i] <= A[j]) 
+			        {  
+			            temp[k++] = A[i++];  
+			        }  
+			        else 
+			        {  
+			            temp[k++] = A[j++];  
+			            inv_count = inv_count + (mid - i);  
+			        }  
+			    }  
+
+			    while (i <= mid - 1)  
+			        temp[k++] = A[i++];  
+			    while (j <= right)  
+			        temp[k++] = A[j++];  
+			    for (i = left; i <= right; i++)  
+			        A[i] = temp[i];  
+			  
+			    return inv_count;  
+			} 
+			
+		- merge procedure in linked list
+		- inversion count in merge sort
+			where i is first sorted array and j is in second sorted 
+			sunarray
+			if(a[i]>a[j]) 	
+				inversion_count+=mid-i+1
+
+		- find count of pairs such that a[i]>2* a[j] && i<j
+
+			int mergesort_and_count(vector<int>& A, int start, int end)
+			{
+			    if (start < end) {
+			        int mid = (start + end) / 2;
+			        int count = mergesort_and_count(A, start, mid);
+			        count+=mergesort_and_count(A, mid + 1, end);
+			        //important to notice
+			        int j = mid + 1;
+			        for (int i = start; i <= mid; i++) {
+			            while (j <= end && A[i] > A[j] * 2LL)
+			                j++;
+			            count += j - (mid + 1);
+			        }
+			        
+			        merge(A, start, mid, end);
+			        return count;
+			    }
+			    else
+			        return 0;
+			}
+ 
+
+	Given an unsorted array find maximum sized subarray whose sum>=k
+		Use prefix sum and binary search for all subarray starting at index i.
+
+		Given an array of N element which indicate the influence value of ith person.
+		A person can cast any number of votes, and it can vote only if
+
+			a) j<i if a[j]+a[j+1]+...+a[i-1]<= a[i]
+			b) j>i if a[i+1]+a[i+2]+ ... + a[j-1]<=a[i]
+
+			find number of votes to any person

@@ -1,0 +1,14 @@
+1-find pow(N,k) using recursion
+2-subset using recursion 
+	Number of subset with given sum
+
+	Given array of N positive number, find number of subset which sum up to given sum, the element can be taken any number of times.
+3-All permutation of a number
+	a) without duplicates
+	b) with duplicates
+
+4- Given a 2-D grid find number of path from grid number 1 to grid number 2 such that you can only travel on grid numbered 0 exactly once, and you can't go to grid numbered -1.
+
+	Must do- N Queen Problem
+			next_permutation
+			

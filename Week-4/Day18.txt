@@ -1,0 +1,15 @@
+1- There is a X-Y plane, and there is two array for x,y coordinates of points Pi
+	Find the maximum points line on the same line
+
+	Use Hashing to count of slope as key and freq as value, 
+
+2- Length of longest substring containing distinct character
+	Two pointer + Hashing
+	increment second pointer as long as distinct character is coming, and when any repeated character comes, we have to shrink the window till the last -1 occurence of repeated character.
+
+3- 	Given two string S and T find minimum substring of S which contains all
+	character of T
+
+	Assignment
+		Lightsabers
+		

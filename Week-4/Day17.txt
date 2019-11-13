@@ -1,0 +1,55 @@
+Hashing
+	Chaining 
+	Collision
+
+	In java balanced red black bst is used if the hash value of two keys is same, so the searching a key is O(logn)
+
+	1- Given a stream of number which have three types of queries
+		a) + num 	add an instance of the number to array
+		b) - num 	delete an instance of the number from the array
+		c) q string of 0 and 1 : 0 indicate odd digit an that position and 1 indicate even digit, find number of numbers that is equivalant to that string
+
+		use hash of decimal equivalent of string
+
+	2- Subarray with sum 0
+		Use prefix sum
+
+	3- Longest subarray whose sum is k
+		look for prefix-k in hashmap
+
+	4- Given array of N element return 1 if it contains contiguous integers
+										and 0 otherwise
+
+	5- Length of longest continous sequence
+		for i= min to max of array
+			if(mp.get(a[i-1]))
+				len1=mp[a-1]
+			if(mp.get(a[i+1]))
+				len2=mp[a+1]
+			maxi=max(mxai,len1+len2+1)
+
+		Approach 2- COunt the longest streak beginning from that element
+		for i in array
+			if(map.get(arr[i]-1)
+				continue;
+			else 
+				c=0
+				while(x is in map)	
+					c++;
+					x++;									
+
+	6-Given N pairs of points, find the number of right angled triangle whose sides are aligned with x and y axis
+
+		get two map for x axis and y axis
+		if we are at point (xi,yi) we will count the frequency of xi and yi in map
+		if it comes out to be n1 and n2, then our answer will be (n1-1)*(n2-1)
+
+	Assignment
+		1- Find if there is a sub-array with 0 sum
+		2- Largest Continuous Sequence Zero Sum
+		3- Longest Consecutive Sequence
+		4- Given an array A of integers, find the index of values that satisfy A + B = C + D,
+
+	Homework
+		1- Valid Suduku
+		 

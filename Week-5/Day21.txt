@@ -1,0 +1,31 @@
+Isomorphic string
+	use map
+
+Given a number find if any permutation is divisible by 8
+	Find all the three digit number divisible by 8 
+
+Pattern Searching
+	KMP
+	Expanding around center
+	Manachar algorithm
+
+Assignment 
+	Compare Version Numbers
+	split about . and compare
+	Minimum Characters required to make a String Palindromic
+		Approach 1- S + '$' + Reverse of S
+					Find LPS
+
+		Approach 2-
+			Start checking the string each time if it is palindrome, and if not, then delete 
+			the last character and check again. After deleting count number of characters from the last i.e., 
+			the characters to be added to front, there will be a string which will be palindrome.
+
+
+Homework 
+	Integer to Roman
+	Pretty Json
+	Roman to integer
+		if next character value is greater than we have to substract that value.
+		eg- XL is 40
+		

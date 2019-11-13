@@ -1,0 +1,21 @@
+Day-26- Queue
+	We need two pointer front and rear in queue, 
+	two operation- enqueue and dequeue
+
+	Implement queue using stack.
+		using two stacks
+	Implement stack using queue
+
+	Code of impllementation of queue
+
+	Form n number with digit 1,2,3
+
+Dequeue
+	Sliding window maximum
+		remove smaller number from the front
+		and remove element which is out of range from back.
+
+Circular queue
+	Enqueue 
+		full- (front+rear+1)%size ==size-1
+		

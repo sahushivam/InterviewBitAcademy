@@ -1,0 +1,26 @@
+Sorting
+	Stable Sorting 
+		1- Insertion sort
+		2-	Bubble sort
+			If in bubble sort instead of reversing two sized subarray, we reverse subarray of size three, what will be the pattern we will get after applying this type of sort.
+
+			even position will be sorted , and odd place will be sorted
+
+O(N) sorting technique
+	Counting sort
+		1- find frequency of all number 
+		2- build cummulatative frequency array in revise order (that is max to min)
+		3- place element at N-CF[a[i]], CF[a[i]]--;
+
+	Radix Sort
+		Sorting based on digit
+		Coding implementation
+
+	Number of septeples such that (a+b+c-d)/e =f;
+
+	Assignment
+		finding-sum-of-the-differences-of-max-and-min-of-all-possible-subsets
+
+	Homework 
+		Product of sum
+		https://www.interviewbit.com/academy/mentee-dashboard/classroom/sorting-32f54406-682e-47c1-9d18-e10c0bf5a4c7/
