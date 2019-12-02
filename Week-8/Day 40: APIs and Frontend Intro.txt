@@ -1,0 +1,18 @@
+
+git checkout --.
+
+to make  code clean we write html content in different directory named template
+mkdir template in todo_app
+make html file
+
+render_template('A.html',todo_list)
+
+in 
+A.html
+	<html>
+		<body>
+			{%% for todo in todolist%%}
+				{{todo}}
+			{%%endfor%%}
+		</body>
+	</html>

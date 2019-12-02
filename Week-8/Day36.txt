@@ -1,0 +1,41 @@
+1- 	What are product engineer?
+	Product Manager + Software
+
+2- Timetable for Hackathons (28:00 - 40:00)
+
+3- GUI vs CUI
+
+4- Basic commands
+	ls, touch, mkdir, rmdir, cat(to output content of file)
+	echo, 
+
+5- Segregate the files in folder based on the date they are created.
+	years= $(for $i in `ls'; do echo  $i | cut -d '-' -f 1; done)
+
+	for year in `echo $years` ; do mkdir "$year"; done 	# to create directory
+
+	#loop through all the images and move in their respective folder
+	for img in `ls *.png`:
+	do 
+		year = `echo $img | cut -d '-' -f 1`
+		mv $img $year
+	done
+
+
+6- Play youtube for 15 seconds
+	open -a "Google Chrome" https://youtube.com
+	sleep 15
+	echo "Shutting down"
+
+7- Download wallpaper from a website
+
+
+8- What is git?  idea about version control.
+
+9- Git commands
+		git init
+		git add -A
+		git remote add origin url
+		
+		
+	

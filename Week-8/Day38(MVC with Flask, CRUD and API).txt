@@ -1,0 +1,15 @@
+Setup for developing flask app
+	
+Code in MVC format.
+
+In code 
+	todo_view is VIEW
+		it is only concerned with presentation
+		not concern with data
+	get_todoes_by_name IS MODEL
+		give data
+		data manipulation is done in model
+		deals with database
+	todos CONTROLLER
+		handle requests
+
