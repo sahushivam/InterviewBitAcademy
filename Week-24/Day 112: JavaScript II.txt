@@ -1,0 +1,67 @@
+1- == vs ===
+	=== checks type too.
+	
+2- type of NaN
+	name is NOt a Number but type is Number
+
+3- NaN == NaN is false
+	so this is a check, something which is not equal to itself is NaN
+
+4- Convert argument's object into array
+	Array.prototype.slice.call(args)
+	call is calling forcefully.
+
+5- Scopes in javascript
+	local, global,
+
+	use strict to avoid local scope polluting the global scope.
+
+6- window object
+	All the code go into window object, it is same as highest global scope
+
+7- Hoisting
+	variable if declared below is declared above, but it is intialized where the line is put.
+
+8- Proto
+	var animal={
+		eats: true,
+		walks : function()
+		{
+			console.log("walks");
+		}
+	}
+	var rabbit={
+		jumps: true,
+		__proto__:animal;
+	}
+	//rabbit will get all properties of Animal
+
+9- Constructor
+	function Animal(eats)
+	{
+		this.eats=eats;
+	}
+	Animal.prototype.walks=function()
+	{
+		console.log("Animal walks");
+	}
+	var rabbit= new Animal(eats)// rabbit will have eats = true with walks property.
+
+10- Bind
+	var Pokemon = {
+		firstname: "poke",
+		lastname: "chu",
+		get_Pokemon function()
+		{
+			var fullname = this.firstname + this.lastname; //this is correct
+			return fullname;
+		}
+		var Poke= function()
+		{
+			console.log(this.get_Pokemon()); //error because this refers to window object
+		}
+		//to bind we need to write above
+		var Po = Poke.bind(Pokemon)
+
+11- call & apply
+	

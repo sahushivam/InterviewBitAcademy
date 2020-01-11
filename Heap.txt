@@ -1,0 +1,41 @@
+Heap
+	Min Heap STL
+		priority_queue <int, vector<int>, greater<int> > pq;
+	Heap struct
+		priority_queue <Type, vector<Type>, ComparisonType > min_heap;
+
+		struct comp{
+			bool operator()(T &x, poll T &y){
+				if(x.d > y.d)
+					return true;
+				else if(x.d == y.d)
+					return x.s < y.s;
+			}
+		};
+
+	Questions
+		1- Build array from sum of all its subsets.
+			first number of multiset will be included in ans and remove the sum made by that number and upcoming number
+		2- 
+
+Heaps(2)
+	Learn - 
+		1- How to build heap,
+		2- Min Heap STL
+		3- Concept used in heap
+			1- check if median of A[0] to A[i] is equal to A[i+1] to A[N]
+			2- Median in the stream of number
+			3- 
+
+DSU(2)
+	Learn-
+		Code
+		Concept 
+			1- Check if graph is bipartitite
+			2- Finding number of connected component in graph
+			3- 
+
+Segment Tree(4)
+	Learn-
+		Code
+

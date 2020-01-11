@@ -1,0 +1,13 @@
+Why NOSQL?
+	NOSQL is used to make queries faster, as joins are not used in it
+	To implement transation properties the MongoDB has mongoose 
+
+Datatypes in Mongoose
+	1- Numerals
+	2- Boolean
+	3- Array
+	4- Mixed
+	5- Object
+
+Create DB at mongoDB cloud
+Connection of MongoDB with express framework

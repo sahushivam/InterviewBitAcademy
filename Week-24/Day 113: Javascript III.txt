@@ -1,0 +1,105 @@
+1-	9+"1" //91
+	9 + +"1" //10
+	+"43"+9 //52
+
+2-	function log()
+	{
+		var args = Array.prototype.slice.call(arguments); //convert argument object to array
+		args.unshift("app");	//push
+		console.log.apply(console,args);	
+	}
+
+3-	function Mammal(name){
+		this.name = name;
+		this.offspring = [];
+	}
+	Mammal.prototype.haveABaby = function() //we want this method to be inherited that 												//inherit Mammal class
+	{
+		var newBaby = new Mammal("Baby "+ this.name);
+		this.offspring.push(newBaby);
+		return newBaby;
+	}
+
+	function Cat(name){
+		this.name = name;
+	}
+	Cat.prototype = new Mammal(); //here where inheritance occurs
+	Cat.prototype.constructor = Cat;
+
+	var someAnimal = new Mammal('Mr. Biggles');
+	var myPet = new Cat('Felix');
+	console.log('someAnimal is' + someAnimal.name);
+	console.log('myPet is'+ myPet.name);
+	myPet.haveABaby(); //inherited from Mammal Output- Baby Felix
+
+4- 	Lambda function
+	(function defination)();
+
+5- Closure
+	retaining the value of the variable after it scope is over.
+	function test()
+	{
+		var a = 10;
+		return function()
+		{
+			console.log(a);
+		}
+	}
+	var z= test();
+	z(); //prints 10  
+
+	function makeCounter()
+	{
+		var count=0;
+		return function()
+		{
+			return count++;
+		};
+	}
+	var counter= makeCounter();
+	var counter2= makeCounter();
+
+	alert(counter1()) //0
+	alert(counter1()) //1
+
+	alert(counter2()) //0 (independent)
+
+	Closure in loop
+		for(var i=0;i<5;i++)
+		{
+			setTimeout(function(){
+				console.log(i);
+			},10)
+		}
+		Output- 5555
+
+		for(var i=0;i<5;i++)
+		{
+			setTimeout(function(){
+				console.log(i);
+			}(i),10)
+		}
+		Output 1 2 3 4
+
+		can also be done with
+		for(var i=0;i<5;i++)
+		{
+			setTimeout(function(){
+				console.log.bind(console,i);
+			},10)
+		}
+
+6- Currying
+	Currying is a technique of evaluating a function with multiple arguments, into sequence of function with single/multiple argument. 
+	function add(x){
+	    return function (y){
+	        return x+y;
+	    }
+	}
+	add(2)(3)
+
+	
+
+
+
+
