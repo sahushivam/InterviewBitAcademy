@@ -1,0 +1,27 @@
+Longest Palindromic Subsequence
+	1- X[i]!=X[j] L[i][j]=max(fun(i+1,j),fun(i,j-1))
+	2- X[i]==X[j] L[i][j]=fun(i+1,j-1)+2
+	//base cases
+
+Maximum Sum Increasing Subsequence
+	We need a slight change in the Dynamic Programming solution of LIS problem. All we need to change is to use sum as a criteria instead of length of increasing subsequence.
+
+Palindromic Partitioning
+	
+
+
+Matrix Multiplication
+Partition Problem
+
+Ways to color a 3xN Board
+
+
+bool reverseSorted(const vector<int> &A)
+{
+    for(int i=1;i<A.size();i++)
+    {
+        if(A[i]<A[i-1])
+            return false;
+    }
+    return true;
+}

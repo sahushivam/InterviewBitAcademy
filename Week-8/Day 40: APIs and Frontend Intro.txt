@@ -1,5 +1,5 @@
 
-git checkout --.
+git checkout --. //to revert to the last saved point.
 
 to make  code clean we write html content in different directory named template
 mkdir template in todo_app

@@ -29,7 +29,7 @@ void Union(ll i, ll j,vector <ll> &s) {
         if(xs == ys){
             return;
         }else if(xs>ys){
-            parent[y] = x;
+            
         }else{
             parent[x] = y;
         }

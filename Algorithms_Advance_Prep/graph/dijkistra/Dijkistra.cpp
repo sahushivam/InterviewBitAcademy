@@ -39,6 +39,7 @@ int main(){
     int source;
     cin>>source;
     p.push({0,source}); dist[source]=0;
+
     while(!p.empty())
     {
     	int v=p.top().second;
@@ -51,6 +52,7 @@ int main(){
     		{
     			dist[node]=dist[v]+wei;
     			p.push({dist[node],node});
+                //parent[node]=v;
     		}
     	}
     }
