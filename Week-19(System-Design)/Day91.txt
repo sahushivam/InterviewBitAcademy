@@ -1,0 +1,67 @@
+System Design
+	-low level(Code quality)
+	-high level(overall architecture of system)
+
+Abstract view of High Level Design
+	-Load Balancer- Distribute load and also guarantee one request is mapped to only one app server.
+	-App Server
+	-CDN(Cache)
+	-Database
+		-MySql(ACID, more write)
+		-Non Sql(Scalability, more read)
+
+	-Cache(MemCache)
+
+Questions to ask
+	What type of DB
+	What kind of Cache
+		-LRU
+		-or some other
+	How much data I need?
+	How many concurrent request we need make?
+	Read Heavy/ Write Heavy(Read is easy, write have many steps, in write heavy cache plays less role)
+
+Kafka is queue based system which quarantee that your request will be eventually served
+
+CAP
+	Consistency -  Every read returns latest write
+	Availability - every request recieves a non-error response
+	Partition Tolerate- a guarantee that the system continues to operate despite arbitrary message loss or failure of part of the system
+
+	For distributed system P is default and we have to choose between C and A.	
+
+Latency - Time to get response after the request is made.
+
+How to make copies of database
+	-Multiple copies
+	-Back Up
+	-Horizontal Scaling/Sharding
+	-RAID(0-6)
+	-Master Slave
+
+Master Slave Architecture
+	
+
+	Read Scalable-
+		1 master - multiple slave
+		Client talks to master
+		Problems to address
+			--> Inconsistency with slave
+			--> Network partition when writing in slave
+				--> Reject Writes
+				--> Master save the write and eventually write in slave
+
+		Zookeeper has high availabilty and hear for heartbeat for finding whether the slave is alive.
+
+
+
+	How to make new master in case of failure?
+
+Types of Cache
+	Write through(Update db after cache)
+	Write back(Update cache after db)
+	Write around(Simultaneously update db and cache)
+
+
+
+

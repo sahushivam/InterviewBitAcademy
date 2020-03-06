@@ -1,0 +1,79 @@
+Design tinyURL
+	Phase 1: Specification(Minimal Viable Product)
+		2 - 5 minutes on discussing the structure
+	
+	Phase 2: Estimation of Scale(5 min)
+
+	Phase 3: Design Choices/ Preferences
+			1- Consistency or Availabilty
+
+	Phase 4: Design Skeleton
+		Skeleton Design
+		Depth of each component
+
+
+Phase 1:
+	Type 1 : Given long URL find short URL
+	Type 2 : Given Short URL redirect to long URL website
+	Type 3 : Validity of URL -  infinite\
+
+Phase 2:
+	1 billion request per day, and only 0.1% request is of type 1.
+		10 million writes
+		990 million reads
+
+	Choice of data structure 
+		Hashmap
+			length of short-url
+
+			10M * 365 * 10 = 365 B
+
+			36 character (0-9 + a-z)
+			36^x > 365 B
+			x=log(365 * 10^12)/ 36  ===  7
+
+		Query per second(QPS)
+			990 million per day
+			10000 QPS per second
+
+
+		Storage
+			100B * 10^6 === 0.2 GB
+			0.2 * 365 * 10 === 730 GB
+
+		Computation
+			A machine can handle 1M request if it doesn't do anything
+
+			But let 1 req takes 1ms, and we have 4 cores
+			4 req takes 4ms
+			so I can process 4000 queries per sec
+
+Phase 3: Design Choice
+	 
+	Latency : Very important
+	Consistency/ Availability : We move forward with consistency
+
+Phase 4: 
+	Design 
+		API Design: 
+			get_original_url(short_url)
+				generate randomlly
+			generate_short_url(original_url, auth_token)
+				req ---  DB --- returns
+						or
+				req --- Cache --- DB --- return 
+
+			---take care of error 
+
+			Problem of inconsistency
+				If N/2+1 servers returns success then success(write)
+				read from all servers and if any returns then return it
+				----run sync jobs in background
+
+		Skeleton
+		Deep dive
+
+Ques - How would the design change if we facilitate delete and update of short url? 
+
+
+

@@ -10,7 +10,7 @@ typedef long double ld;
 ll parent[10005];	//It tells s[i]th dish belong to which chef.
 
 ll Find(ll v) {
-    if (parent[v]==-1)
+    if (parent[v]==i)
         return v;
     parent[v] = Find(parent[v]);
     return parent[v];

@@ -1,0 +1,26 @@
+Design facebook news feed
+
+Users
+Posts
+Friends (U1 ---  U2)
+
+Facebook feed loads faster by caching. How to design the caching?
+	1- Publisher- Subscriber model in case of normal user
+	2- Pull in case of celebrity post(Page)
+
+
+	Recent post of 1 month
+	We can keep post_id of friends and can fetch, but we will have to fetch from 1000 machine for that.
+	Cache
+	[user_id,post_id]
+	We will cache only 10 recent posts for them, so that will be 1B * 10 * 1KB 
+
+	Cache 1 - For three days recent days
+	Cache 2 - For top 5 posts of all user
+
+We keep images in nearest cdn to save it from round trips.
+
+
+Distributed Cache
+
+

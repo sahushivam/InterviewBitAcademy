@@ -1,0 +1,16 @@
+Load Balancer has job to route to right server.
+	Ways to route traiff
+		To route the traiff we can use (user_id%N)
+			- what if we add one more device, then all user will have to reassigned.
+
+			- Hash(user_id)--> server_id
+				The table of this map will become big and it will not be able to fit in memory of load balancer
+
+			-Consistent Hashing
+
+			We have multiple hash values for a server so that if we add/remove a server than it get mapped evenally.
+
+			We keep the map of start values and server,and go on to do upper bound.
+
+CDN
+	

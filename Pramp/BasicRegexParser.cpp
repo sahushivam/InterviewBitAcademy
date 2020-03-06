@@ -1,12 +1,6 @@
-#include <iostream>
-#include <string>
-#include<vector>
-using namespace std;
 
-bool isMatch( const string &text, const string &pattern ) 
-{
-  // your code goes here
-  int n=text.size();
+int Solution::isMatch(const string text, const string pattern) {
+    int n=text.size();
   int m=pattern.size();
   vector<vector<bool>> dp(n+1,vector<bool> (m+1,false)); 
   dp[0][0]=true;
@@ -23,13 +17,15 @@ bool isMatch( const string &text, const string &pattern )
         dp[i][j]=dp[i-1][j-1];
       else if(pattern[j-1]=='.')
         dp[i][j]=dp[i-1][j-1];
-      else if(pattern[j-1]=='*')
-        dp[i][j]=(dp[i][j-2] || dp[i-1][j]);
+      else if(pattern[j-1]=='*'){
+        dp[i][j]=(dp[i][j-2]);
+        if((pattern[j-2]=='.') || (pattern[j-2]==text[i-1]))
+            dp[i][j]=dp[i][j] | dp[i-1][j];
+      }
+      
+      else
+        dp[i][j]=false;
     }
   }
   return dp[n][m];
-}
-
-int main() {
-  return 0;
 }
