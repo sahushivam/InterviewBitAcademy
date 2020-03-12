@@ -1,0 +1,5 @@
+Elastic Search ---> nodes ---> lucines ---> mini-indexes
+
+Inverted Index
+	It is used by search engine, to get the word exist in which documents.
+	

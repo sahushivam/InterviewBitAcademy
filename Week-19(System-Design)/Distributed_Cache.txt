@@ -1,0 +1,25 @@
+//Tech Dummies
+
+Cashing best practice
+	Validity
+	High hit rate
+	TTL in cache
+
+Feature Estimation
+	Terabytes of data
+	1 M QPS
+	1 ms latency
+	100% availability
+
+Cache access patterns
+	Write through
+	Write around          / cache
+					write 
+						  \ db
+	Write back
+
+Most simple data structure for cache is hashmap
+	
+We can go for consistent hashing for distributed cache. 
+
+https://blog.pragmaticengineer.com/distributed-architecture-concepts-i-have-learned-while-building-payments-systems/

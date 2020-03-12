@@ -3,6 +3,9 @@ Design tinyURL
 		2 - 5 minutes on discussing the structure
 	
 	Phase 2: Estimation of Scale(5 min)
+			Traffic estimates:
+			Storage estimates:
+			Bandwidth estimates:
 
 	Phase 3: Design Choices/ Preferences
 			1- Consistency or Availabilty
@@ -10,6 +13,10 @@ Design tinyURL
 	Phase 4: Design Skeleton
 		Skeleton Design
 		Depth of each component
+
+	Phase 5: Look for bottleneck
+		Like single point of failure
+		Too many writes consuming the bandwidth of reads too
 
 
 Phase 1:
@@ -30,7 +37,7 @@ Phase 2:
 
 			36 character (0-9 + a-z)
 			36^x > 365 B
-			x=log(365 * 10^12)/ 36  ===  7
+			x=log36(365 * 10^12)/ 36  ===  7
 
 		Query per second(QPS)
 			990 million per day
@@ -75,5 +82,23 @@ Phase 4:
 
 Ques - How would the design change if we facilitate delete and update of short url? 
 
+Generating the key offline
+
+How would we perform a key lookup? We can look up the key in our database to get the full URL. If it’s present in the DB, issue an “HTTP 302 Redirect” status back to the browser, passing the stored URL in the “Location” field of the request. If that key is not present in our system, issue an “HTTP 404 Not Found” status or redirect the user back to the homepage.
 
 
+Data Partitioning and Replication
+	Range based partitioning
+	Hash based partitioning:(Consistent hashing)
+
+Purging or DB cleanup
+	
+We can add a Load balancing layer at three places in our system:
+
+	Between Clients and Application servers
+	Between Application Servers and database servers
+	Between Application Servers and Cache servers
+Load Balancer
+	Health Checks
+
+	The load balancer can be a single point of failure; to overcome this, a second load balancer can be connected to the first to form a cluster

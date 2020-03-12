@@ -1,0 +1,38 @@
+Basic Pieces (In order)
+	Browser
+	Load balancer
+	Application servers
+	Caching layer
+	CDN(s)
+	Database
+
+Scaling a Relational Database
+	high read load then master slave replication (e.g. Twitter / Facebook)
+		Leader has many followers. When DB requests, one of the followers will read the request. However only leader can write to keep things in sync.
+
+	high write load, then shard (e.g. WhatsApp)
+		Not good for Relational DB.
+		Use data sharding. keep database smaller and organized. Sharding becomes really bad when data is shared across sharded tables
+		multiple data centers must be kept consistent
+		within shard, master slave replication exists
+
+	easy to undo: among the reasons why it's popular among startups
+
+How does CDN works in term of HTTP flow?
+	Browser ---> DNS request --> DNS resolves based on geographic location
+
+	Edge server serves the request like a cache.
+
+Find whether system is write-heavy or read-heavy
+	Scaling Reads
+		If your website is primarily a read-heavy system, vertical scaling your datastore with a relational database such as MySQL or PostgreSQL can be a good choice. Couple your RDBMS with a robust caching strategy that uses memcached or a CDN and you’ll have a system that can scale pretty cheaply. In this model, when the database runs out of capacity, putting more pieces of data in the cache helps offset the burden of reads. When there’s no more items left to cache, upgrading your database hardware with faster disks or more processors will usually buy you the necessary runway. Moore’s law makes vertical scaling with this method as simple as buying better hardware.
+
+	Scaling Writes
+		If your website is primarily a write-heavy system, you’re probably going to want to think about using a horizontally scalable datastore such as Riak, Cassandra or HBase. Unlike most RDBMSes, these datastores usually grow by adding more nodes. Because your system is going to be mostly writing, caching layers will not help you much like in a read-heavy system. Many write-heavy systems start out using a vertical scaling strategy, but soon run out of runway. Why? Because hard-drives and processor counts plateau at a certain point, and the marginal cost of adding one more core or a harddrive that does a few more I/O ops per second grows exponentially. If you instead choose a horizontally scalable strategy for your write-heavy system, you reach an inflection point where the marginal cost of adding one more node to the system becomes far cheaper than the cost of a harddrive that might eek out a few more disk seeks.
+	
+Web System Basics
+	HTTP vs HTTPS
+	XSS vs CSRF
+		Cross-site Scripting vs Cross-Site Request Forgery
+		XSS executes a malicious script in your browser, CSRF sends a malicious request on your behalf.
+		CSRF - consider an example when you are logged in into your banking site and at the same time logged into Facebook in another tab in same browser. An attacker can place a malicious link embedded in another link or zero byte image which can be like yourbanksite.com/transfer.do?fromaccnt=youraccnt&toaccnt=attackersAccount&amt=2500. Now, if you accidentally click on this link , in the background transfer can happen though you clicked from the Facebook tab.

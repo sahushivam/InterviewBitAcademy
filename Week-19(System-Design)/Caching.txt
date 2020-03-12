@@ -1,0 +1,27 @@
+Why Cache 
+	-speedup
+	-reduce workload oon back-end server.
+
+Eviction Policy
+	- LRU
+	- WTinyLFU - In a nutshell, the problem of LFU is that sometimes an item is only used frequently in the past, but LFU will still keep this item for a long while. W-TinyLFU solves this problem by calculating frequency within a time window. It also has various optimizations of storage.
+
+Distributed Cache
+	The general strategy is to keep a hash table that maps each resource to the corresponding machine
+
+memcached allows you to take memory from parts of your system where you have more than you need and make it accessible to areas where you have less than you need.
+
+Each node is completely independent (top).
+Each node can make use of memory from other nodes (bottom).
+
+high read load then master slave replication (e.g. Twitter / Facebook)
+
+Types of caching
+	Client caching
+	CDN caching
+	Web server caching (reverse proxies, cache requests and return responses without having to contact application servers)
+	DB caching
+	Application caching
+
+
+

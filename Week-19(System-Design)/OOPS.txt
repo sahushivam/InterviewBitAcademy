@@ -1,0 +1,29 @@
+Object-oriented programming is a programming language model organized around objects rather than actions and data rather than logic.
+
+Why OOPS-
+	Allows inheritance, reducing development time, easier development experience, and more accurate coding and robustness with reusability. Also data hiding prevents instance of certain class from accidentally accessing other data - safe development. The encapsulation allows programmer to define the class with many functions and characteristics and only few functions are exposed to the user.
+
+four OOPS principle
+	Abstraction
+	Encapsulation
+	Inheritance
+	Polymorphism
+
+Association
+An association is used when one object wants another object to perform a service for it
+	
+	Aggregation
+		has-a relationship
+		Teacher belongs to department. The teacher will not be destroyed if department is destroyed
+
+	Composition
+		is-a relationship
+		Inheritance
+		House has many rooms
+
+
+Coupling
+	A measure of how closely connected software modules are. Loosely coupled system comprises of components that have little or no knowledge of other separate components.
+
+Cohesion
+	A measure of the strength of relationship between the class’ methods and data. High cohesion is associated with reusability, understandability, and robustness.

@@ -1,0 +1,52 @@
+MVP
+	Upload/View/Share Video
+	Record Stats of videos(likes/dislikes)
+	Add/View Comments
+
+Scale 
+	1.5 B User
+	800 million daily user
+	A user views 5 videos, total videos per second would be
+		800M * 5/86400 = 46K videos/sec
+
+	Upload: View = 1:200
+
+	Storage
+		every minutes - 500 videos
+		size - 50 MB
+		500 * 50 * 60 = 25 GB/sec
+
+	Bandwidth 
+		Upload
+			500 * 60 * 10 = 300GB/min
+
+Design Goals
+	High Reliablity
+	High Available
+	Low Latency
+
+Deep Dive
+	System API
+		upload_video
+		video_title
+		video_description
+		video_content
+
+	High Level Design
+
+		Processing Queue : for encoding, thumbnail, etc
+		Encoder : to generate videos in multiple format
+
+		Where would videos be stored?
+			Videos can be stored in a distributed file storage system like HDFS or GlusterFS.
+
+		Read Heavy System
+			We can use different server for reading the data.
+
+		How can we build more intelligent cache?
+			If we go with 80-20 rule, i.e., 20% of daily read volume for videos is generating 80% of traffic, meaning that certain videos are so popular that the majority of people view them; It follows that we can try caching 20% of daily read volume of videos and metadata.
+
+		CDN
+			Trending videos can be stored in CDN
+
+

@@ -4,11 +4,15 @@ How to design cache which has to be very very consistent?
 					  <--
 
 	Client generate the message_id to remove duplicacy
-
+ACID
+	Isolation
+		- Read committed
+		- Snapshot
+		- Serializable
 Race condition: dirty write, last update get overwritten
 
-Dirty Read
-Dirty Write
+Dirty Read        W---R---committed
+Dirty Write       W---W---committed
 
 Read committed provides you that there will be no dirty read or dirty write.
 	Write lock

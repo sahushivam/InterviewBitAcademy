@@ -1,0 +1,14 @@
+Netflix works in two cloud- OpenConnect and AWS
+
+Three components
+	OpenConnect (Handles stream, Netflix owned CDN)
+	Backend (Handled by AWS)
+	Client(App/WebApp)
+
+Netflix uses elastic load balancer which is balanced across (1)zones and further on (2)instances
+Load Balancing are uses round robin
+
+Encoder : Netlix uses generate different formats. Movie are broken in different files and merge is done on AWS S3.
+
+ZUUL
+	It is gateway service that provides dynamic routing,monitoring, resilency and security. It does connection management and 

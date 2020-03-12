@@ -1,0 +1,17 @@
+Database Sharding
+	A process of splitting up a database across  multiple machines to improve the scalability of an application.
+
+	Database ---> logical shards --->(distributed) physical shards
+
+	Advantages of Sharding
+
+	1. High Availability
+	2. Faster queries responses (queries have to go over fewer rows)
+	3. More write bandwidth: with no master database serializing writes you can write in parallel.
+
+	4. Scaling out
+
+	Disadvantage of sharding
+
+	1. Add complexity in the system
+	2. Rebalancing data

@@ -1,0 +1,30 @@
+https://github.com/rlee0525/TechnicalConceptsForInterviews/blob/master/ChoosingDB.md
+SQL offers ACID
+NoSql offers Base (Eventual Consistency)
+	BASE stands for BA (Basic Availability), S (Soft-State) and E (Eventual Consistency).
+
+	Soft-State ( S ) : Stores don’t have to write consistent. No different replicas have to be mutually consistent all the time.
+
+
+1. RDBMS can not handle ‘Data Variety’.
+2. Difficult to change tables and relationships.
+3. Joins takes time
+
+In NoSQL each point of application can be stored as single document.
+
+CA--- Relational Database
+AP--- Cassandra, DynamoDB (Wide-Column Store/Key Value Pair)
+CP--- HBase,Hive,Giraph 
+
+Start with SQL db
+	well worn technologies, docs, books, communities
+	well known paths to scalability
+	would work well for a lot of data
+
+NoSQL comes in place if:
+	working with terabytes of data
+	no clear need for JOINS (relational)
+	super low latency is required
+	very well suited to distributed data
+	
+	if schema changes need take use nosql is good

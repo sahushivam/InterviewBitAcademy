@@ -1,0 +1,15 @@
+Kafka 
+	uses
+		- queue - a pool of consumers may read from a server and each record goes to one of them.(it is not multi-subscriber, once a server reads it is gone)
+		- publisher/subscriber model - (it allows to broadcast data to multiple processes)
+
+	usage
+		- async communication protocol
+		- fault tolerance
+
+	Kafka achieves both ordering quarantees and load balancing over a pool of consumer processes. This is achieved by assigning the partitions in the topic to the consumers in the consumers group so that each partition is consumed by exactly one consumer in the group. 
+
+	Message queue provides a means for services to push messages to a queue asynchronously and ensure that they get delivered to the correct destination. To implement a mesage queue between services, you need a message broker,(mailman)
+
+	Message Broker
+		RavvitMQ  
