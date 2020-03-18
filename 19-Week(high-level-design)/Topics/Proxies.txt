@@ -1,0 +1,25 @@
+A proxy server is an intermediary piece of hardwaresoftware that sits between the client and the back end server.
+
+example- nginx which has http proxying capabilities, which allow servers for further processing.
+
+Proxies are used to 
+	- filter requests
+	- transform requests(adding/removing header)
+	- cache
+	- coordinating requests from multiple servers and can be used to optimize request traffic from a system wide perspective.
+
+	-scale out infrastructure
+
+nginx upstream balancing algorithm
+
+-round robin : 
+-least connection 
+-ip_hash
+-hash (used with memcached)
+
+Reverse proxy servers: sits behind the firewall in a private network and directs client requests to the appropriate backend server.
+
+Use of reverse proxy server:
+	- load balancing
+	- web acceleration  
+	- security and anonymity

@@ -1,0 +1,9 @@
+Animal --> Dog(can't fly)
+	   --> Bird(can fly)
+
+
+<Interface>flys  --->   <Class> Can fly 
+				 ---> 	<Class> Can't fly
+
+Then we are going to dynamically change according to fly or not fly, we will make object of flys
+

@@ -1,0 +1,50 @@
+Searching-2 
+
+	1-Given a sorted array of permutation (1 to N-1) in which all element except one comes once and one element comes twice, find element coming twice.
+
+	Approach- find the pattern, a[i]=i+1 before occurence of special integer
+								a[i]=i
+
+	2-Given an array of integers A and an integer B, find and return the maximum value K such that there is no subarray in A of size K with sum of elements greater than B.
+		Approach= use binary search of range of size and calculate sum of all subarray of size mid.
+
+	3- A farmer has N stall which are at position a[i] given in array of size N.
+	He has C cows. Maximise the minimum distance between any two cows.
+
+	here mid will indicate the distance after which we will put the cows.
+
+	if you need to find answer by guessing here is the implementation details
+		go for 
+			while(high-low>1)
+			{
+				if(possible(mid))
+				{
+
+				}
+				else
+				{
+
+				}
+			}
+				return low;
+
+	4- Given N books having p[i] pages respectively, and M students, maximise the minimum number of pages each student canread, such that
+	1- Allocation of books should be contiguous,
+	2- Each student to get atleast one book.
+
+	5- Given a number N find the smallest good base of N
+		Good base  k is the base which can represent the N using all 1's 
+					k>=2
+
+		Approach- fix value of i in 1+M+ M^2 + ... + M^i
+
+		i will run from 63 to 1
+			if(1+M+ M^2 + ... + M^i < N) low = mid+1
+			else if(1+M+ M^2 + ... + M^i > N) high = mid-1
+
+(Important)
+	6- Given a family of string in which s[0]=0
+		s[i]=s[i-1]+ "0" + ~s[i-1]
+		find kth character of nth string.
+
+	Hint- Bit will change when we move to right.

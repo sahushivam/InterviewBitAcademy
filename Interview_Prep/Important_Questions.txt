@@ -1,0 +1,18 @@
+Max number of chunks to sort the array
+Alternate positive and negative elements
+Time complexity of Euclid Algorithm, Heapify,
+Find overlapping area of rectangle
+Count number of times digit 1 is coming in number less than N
+rank of the word in sorted permutation
+Rand(9) by Rand(5)
+medium of two sorted array
+Given a family of string in which s[0]=0
+		s[i]=s[i-1]+ "0" + ~s[i-1]
+		find kth character of nth string.
+next permutation
+Given a 2-D grid find number of path from grid number 1 to grid number 2 such that you can only travel on grid numbered 0 exactly once, and you can't go to grid numbered -1.
+
+https://www.geeksforgeeks.org/find-sum-maximum-difference-possible-subset-given-array/
+Lightsabers
+Manchar Algorithm
+KMP

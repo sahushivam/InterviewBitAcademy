@@ -1,0 +1,52 @@
+Given a keyword returns k top searches that has prefix has given type
+Steps
+	1- MVP
+	2- Estimation of Scale
+	3- Design Choices
+	4- Deep Dive
+			-API
+			-Skeleton
+			-Process on one machine
+			-How it scale
+	5- Bottleneck Condition
+	
+MVP
+	Personalization  -- Not
+	Location  -- Not
+	Trends/recent news -- yes
+	Spelling mistake -- not
+
+Estimations
+	1 B searches per day
+		5 queries typehead
+
+	Queries per second === 5*1B/86400 === 60000 
+	new search - 0.5B 
+
+	Storage- 0.5B * 30B= 15 GB
+	50 * 365 * 15 = 274 TB === 200 machines
+
+
+Design Choices
+	Latency : Very high
+	Consistency/ Availability : Availability
+
+Deep Dive
+	API
+		- Get suggestions(prefix_str, auth_token)
+		- update_frequency(search_term, auth_token)
+
+	Trie:
+		- Node stores char, top 5 suggestions along with frequency
+
+	To built recency in frequency we use hashmap, and if it exceeds certain threshold then we update in search_vector
+
+	Every week we decrease the frequency by half.
+
+	Sampling-
+		Reduce number of writes per second
+
+	How to split tries between multiple machine
+		Split according to the prefix
+		aaa... 		--- 1 machine
+		aab... 		--- other and so on.

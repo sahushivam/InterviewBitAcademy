@@ -1,0 +1,41 @@
+How to design cache which has to be very very consistent?
+	
+	Request --> Cache --> DB   (Atomic operation)
+					  <--
+
+	Client generate the message_id to remove duplicacy
+ACID
+	Isolation
+		- Read committed
+		- Snapshot
+		- Serializable
+Race condition: dirty write, last update get overwritten
+
+Dirty Read        W---R---committed
+Dirty Write       W---W---committed
+
+Read committed provides you that there will be no dirty read or dirty write.
+	Write lock
+	Read last committed value.
+
+
+Snapshot
+
+	A-- 500
+	B-- 500 
+
+		transaction: A gives 100 to B
+			Steps: A-- 400       400
+				   B-- 500       600
+
+		A has 500 after transaction let 10,
+		A has 400 after transaction 12
+		So any transaction after 12 will read A has 400, before 10 will have 500. (MVCC-- Multivalued Concurrency Control)
+
+
+Serializable
+	View Serializable
+	Conflict Serializable - Can be converted to view serializable by swapping non-conflicting operation.
+	Two Phase locking
+
+

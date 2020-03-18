@@ -1,0 +1,17 @@
+Day 37: Advance git and MVC Architecture
+
+Here is the tutorial link: http://flask.pocoo.org/docs/1.0/tutorial/
+
+Branching, merging of the repository
+
+	def checkout -b "log implementation" //it creates new repository
+	git push origin log implementation
+
+
+MVC 
+	Model, view and controller
+	In restaurant, 
+	cook is the model,  So model has business logic and data, reciepes are the business logic. 
+	view is the dish, view is what we see. view should only be responsible to pass on the data to controller and take the response.
+	controller is the waitor. Interacts between backend and frontend. controller is very thin.
+
