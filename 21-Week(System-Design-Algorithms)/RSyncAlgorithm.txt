@@ -1,0 +1,3 @@
+The rsync algorithm is a technique for reducing the cost of a file transfer by avoiding the transfer of blocks that are already at the destination.
+
+https://dropbox.tech/infrastructure/streaming-file-synchronization

@@ -1,0 +1,47 @@
+The lossy count algorithm is an algorithm to identify elements in a data stream whose frequency count exceed a user-given threshold.
+
+	Fast and Reliable Scoreboard ranking in gaming sites(persistent, transactional, fast, and scalable ranking implementation)
+
+	Note : Following content is from 
+	https://cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore
+		
+		Problems:
+			1- Hundreds of Thousands of users
+			2- Real time score changes
+
+		Ways
+			1- Scan through database. (Easy but not fast and scalable) O(n)
+			2- Maintain ranking data in Memcache. (Fast but not consistent and available)
+			3- Looking for O(logn) algorithm
+				Expose two API
+					SetScore(user)
+					FindRank(user)
+
+				1- Build an n-ary tree
+				2- Each node will store the range and number of players in that range.
+
+				In practice, the Code Jam ranking library uses 100  as the default number of values per node, so only two (or three, if the score range is greater than 100,000) entities need to be accessed.
+
+				Concurrent Updates Limit Scalability
+					The problem with above approach is updates. It is too slow.
+					The reason is the cost of maintaining the consistency of the tree.In Datastore, you must use an entity group to assure strong consistency when updating multiple entities in a transaction
+
+					Solution:
+					Doing a batch updates, rather than one update at a time.Downside: it uses just one thread to aggregate all the updates, and that imposes a limit to how fast it can send the updates to Datastore.
+
+					To remove this problem do job aggregation with queue.
+
+					The problem with single queue is that is depends on Big-table as peristence layer. When table grows, it splits, and during splits the performances fails. To improve it we use multiple queues. 
+
+				The above solution has only one disadvantage:
+					Throughput of update is less.
+
+	Frequency Count over data streams
+	https://www.cse.ust.hk/vldb2002/VLDB2002-proceedings/slides/S10P03slides.pdf
+
+
+Advantages of Rate Limiting Algorithm
+	 it’s easier for customers to set up and operate, their origin servers are not bothered by excessive traffic or layer 7 attacks, the performance and memory cost of rate limiting is offloaded to the edge
+
+	 Remove resource starvation
+	 

@@ -1,0 +1,8 @@
+1- Largest Area in Histogram
+2- Largest Rectangle of all ones in matrix of 0/1
+3- Min Stack
+	we never store minimum element in stack, if element is less than stack top then we insert 2*x- min_element
+
+	in pop if we see that min_element> stack.top(), then we change min_element = 2*min_element - st.top()
+
+

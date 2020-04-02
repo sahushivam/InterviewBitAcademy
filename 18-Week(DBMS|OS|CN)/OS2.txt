@@ -1,0 +1,56 @@
+Synchronization
+	
+Lock- (Lock allows only one thread to acquire resources and can’t be shared,it is atomic)
+Mutex- Mutex is same as lock except that it can be shared with other processes.It has ownership. The process that lock critical section can unlock
+Spin lock- It is used when thread need not to go in wait state. (Busy Waiting) 
+
+Semaphore- It is variable used for signalling. It is two types- binary & counting
+Unlike mutex it do not have ownership.Semaphore has more power has it can be used in multiple resources.
+
+Question- Find number of semaphores and how we will use them to impose following dependency
+
+	A----> B
+	C----> B
+	B----> D 
+	D----> E
+
+	process 				start					end
+	A 												signal(S1)
+	B 						wait(S1) wait(S2) 		signal(S3) signal(S1) signal(S2)
+	C 												signal(s3)
+	D 						wait(s3) wait(s2) 		signal(s4) signal(S3) signal(S4)
+	E 						wait(s4)
+
+Producer-Consumer Problem
+
+Deadlock
+	Dining Philospher Problem.
+
+4 condition of deadlock
+	Mutual Exclusion
+	Hold & Wait
+	No Preemption
+	Circular Wait
+
+Deadlock Avoidance 
+Banker's Algrithm
+	Need Available Max Number of Resources
+
+
+Process State
+	New, Ready, Blocked, Running, End
+
+
+Key Term
+	Throughput- Process completed in unit time
+	Turn Around Time - Amount of time taken to start of processing to end.
+	Response Time- 
+	Waiting time- Time in which Process was not in memory
+
+CPU Scheduling Algorithms
+	SJF 	Problem - (Starvation)
+	Round Robin 	Problem - (Many Context Switches)
+
+Inter Process COmmunication		
+	Message Passing
+	Shared Memory

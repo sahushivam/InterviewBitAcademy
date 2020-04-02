@@ -1,7 +1,6 @@
 Bit Manipulation
 	
 	1- only one element comes onces and rest comes thrice.
-
 	Approach- Make array of size 64 and for each number and bit do increment, after that take modulo 3.
 
 	Hamming distance is number of position where bits differ
@@ -9,9 +8,7 @@ Bit Manipulation
 	2- Find sum of hamming distance for all pairs.
 
 		arr0[i] represent number of zeroes at ith bit in the array
-
 		make array of size 64, count number of bits and then 
-
 		i=0 to 64
 			ans+=arr0[i]*(n-arr0[i])*2; ((i,j) is different than (j,i))
 
@@ -20,9 +17,14 @@ Bit Manipulation
 
 	4- Max Xor pair in the array
 		Approach 1- Using tries
-
 		Approach 2- Using masking(IMPORTANT)
 
 
 	4- Given L,R where L<R, find two integer a,b such that a^b is maximum
 		find the leftmost bit that is toggled in L and R let it be at position x then, and ans will be pow(2,x) 
+
+	5- Sum of or of all subarray
+		calculate the number of subarrays for which a bit is not set and subtract it from the total number of subarrays.
+
+	6- Sum of xor of all subarray
+		

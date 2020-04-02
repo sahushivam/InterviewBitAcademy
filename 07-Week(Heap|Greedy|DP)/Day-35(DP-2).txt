@@ -1,0 +1,9 @@
+String Count
+	Given an integer A, Find and return (total number of binary strings of length A, without having consecutive 1's) % 10^9 + 7. 
+
+	a[i] represents ending with 0, b[i] represent ending with 0.
+		a[i]=b[i-1] + a[i-1]
+        b[i]=a[i-1]
+
+Rod Cutting
+	

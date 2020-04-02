@@ -15,4 +15,6 @@ findCandidate(a[], size)
           count = 1
 3.  Return a[maj_index]
 
+N/3 repeating number
+	take two variables and use moore's algo.
 

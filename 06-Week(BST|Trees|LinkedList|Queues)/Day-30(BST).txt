@@ -1,0 +1,12 @@
+Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum.
+	Approach : dfs with backtracking
+		void dfs(vector<vector<int>>& ans, vector<int>& temp, TreeNode* A,int B){
+		    if (!A)
+		        return;
+		    temp.push_back(A->val);
+		    if (!A->left && !A->right && B==A->val)
+		        ans.emplace_back(temp);
+		    dfs(ans, temp, A->left,B-A->val);
+		    dfs(ans, temp, A->right,B-A->val);
+		    temp.pop_back();
+		}

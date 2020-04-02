@@ -1,0 +1,17 @@
+Operational transformation (OT) is a technology for supporting a range of collaboration functionalities in advanced collaborative software systems.
+
+How does Google Docs deal with editing collisions?
+	Using a central server
+	The most common scenario is a central server that all clients have to communicate with.
+
+	The server could keep track of how the document of each participant looks. Both A and B then send a diff with their changes to the server. The server would then apply the changes to the respective tracking documents. Then it would perform a three-way-merge and apply the changes to the master document. It would then send the diff between the master document and the tracking documents to the respective clients. This is called differential synchronization.
+
+	A different approach is called operation(al) transformation, which is similar to rebasing in traditional version control systems. It doesn't require a central server, but having one makes things much easier if you have more than 2 participants (see the OT FAQ). The gist is that you transform the changes in one edit so that the edit assumes that the changes of another edit already happened. E.g. A would transform B's edit insert(3, hello) against its edit insert(0, abc) with the result insert(6, hello).
+
+	The difference between rebasing and OT is that rebasing doesn't guarantee consistency if you apply edits in different orders (e.g. if B were to rebase A's edit against theirs the other way around, this can lead to diverging document states). The promise of OT on the other hand is to allow any order if you do the right transformations.
+
+	No central server
+	By using Version vector
+
+
+	Learn more about OT- https://www3.ntu.edu.sg/home/czsun/projects/otfaq/#_Toc321146127

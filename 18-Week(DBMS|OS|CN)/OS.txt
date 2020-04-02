@@ -1,0 +1,18 @@
+Multiprocessing- Multiple process
+Multiprogramming - When a process goes for IO, new process is loaded
+Multithreading - Running multiple process using CPU scheduling algo
+
+Paging
+Virtual Memory- Used when process size is more than RAM allocated to it, so secondary memory is used. Also called swap memory.In page table we keep a track of which page is present in RAM.
+Demand Paging- We bring pages only when it is needed.
+
+Page Hit/ Page Fault.
+TLB- Cache of page-table (Traslation lookaside buffer)
+
+SRAM - cache - uses flip-flop 
+DRAM - RAM - uses capacitor
+
+Page Replacement Algorithm - LRU
+
+Thrashing- Too much page fault.
+

@@ -1,0 +1,58 @@
+Dungeon Princess
+	Given grid of health, and loss of height 
+	 determine the knight's minimum initial health so that he is able to rescue the princess.
+
+	int need = min(hp[i + 1][j], hp[i][j + 1]) - dungeon[i][j];
+    hp[i][j] = max(1,need);
+
+Flip sign of array to divide array into two partition having min difference of sum
+	Knapsack problem where we have to make W = sum/2;
+		dp(n)(sum)
+		dp[i][j]=min(dp[i-1][j],dp[i-1][j-A[i-1]]+1);
+
+Edit Distance
+	if(A[i]==B[j])
+		arr[i][j]=arr[i-1][j-1]
+	else
+		arr[i][j]=1+min(arr[i-1][j-1],min(arr[i-1][j],arr[i][j-1]));
+
+Regular Expression Matching
+	* can match any same alphabet 
+	Note - remember handling corner case.
+	if(b[j-1]=='?') 
+        dp[i][j]=dp[i-1][j-1];
+    
+    else if(b[j-1]=='*')
+        dp[i][j]=dp[i-1][j] || dp[i][j-1];
+    
+    else 
+        dp[i][j]=(a[i-1]==b[j-1])&&dp[i-1][j-1];
+    
+Regular Expression Match-2
+	'*' Matches zero or more of the preceding element.
+	if((text[i-1]==pattern[j-1]) || (pattern[j-1]=='.'))
+		dp[i][j]=dp[i-1][j-1];
+	else if(pattern[j-1]=='*'){
+		dp[i][j]=(dp[i][j-2]);
+		if((pattern[j-2]=='.') || (pattern[j-2]==text[i-1]))
+	    	dp[i][j]=dp[i][j] | dp[i-1][j];
+	    }
+
+Interleaving string
+		if(A[i]==C[i+j+1] && B[j]==C[i+j+1]){                //if both matches
+            dp[i][j]=check(A,B,C,i-1,j) || check(A,B,C,i,j-1);
+        }
+        else if(A[i]==C[i+j+1])
+            dp[i][j]=check(A,B,C,i-1,j);
+        else if(B[j]==C[i+j+1])
+            dp[i][j]=check(A,B,C,i,j-1);
+        else
+            dp[i][j]=0;
+
+
+Unique BST
+	If we choose the number j as the root, j - 1 numbers fall in the left subtree, n - j numbers fall in the right subtree. We already know how many ways there are to forming j - 1 trees using j - 1 numbers and n -j numbers.
+	So we add number(j - 1) * number(n - j) to our solution. Can you use the above fact to construct a DP relation ?
+
+Distinct Subsequences
+	

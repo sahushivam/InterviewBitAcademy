@@ -1,0 +1,7 @@
+https://medium.com/@waleoyediran/spatial-indexing-with-quadtrees-b998ae49336
+
+
+It is a variant of the Tree data structure. Trees generally have internal nodes (nodes that have at least one child) and leaf nodes which have no children. These nodes holds data that are ordered in a hierarchical order.
+
+A quadtree is a tree data structure in which each node has zero or four children. Its main peculiarity is its way of recursively dividing a flat 2-D space into four quadrants.
+	

@@ -1,0 +1,7 @@
+Geohash can used by 
+	1) dating apps to find romantic matches within a particular cell, and to create chat apps.
+	2) Find nearby locations, and identify places of interest, restaurants, shops and accommodation establishments in an area. 
+	3) Geohashers go on global expeditions to meet people and explore new places.
+
+We map every location of the earth using hash.
+

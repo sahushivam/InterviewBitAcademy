@@ -22,8 +22,14 @@ int Solution::trap(const vector<int> &A) {
 }
 
 
-//Approach 2-Here is my idea: instead of calculating area by height*width, we can think it in a cumulative way. In other words, sum water amount of each bin(width=1).
-//Set two pointers l and r to the left and right end of height. Then we get the minimum height (minHeight) of these pointers since the level of the water cannot be higher than it. Then we move the two pointers towards the center. If the coming level is less than minHeight, then it will hold some water. Fill the water until we meet some "barrier" (with height larger than minHeight) and update l and r to repeat this process.
+//Approach 2-Here is my idea: 
+//instead of calculating area by height*width, 
+//we can think it in a cumulative way. In other words, sum water amount of each bin(width=1).
+//Set two pointers l and r to the left and right end of height. 
+//Then we get the minimum height (minHeight) of these pointers since the level of the water 
+//cannot be higher than it. Then we move the two pointers towards the center. 
+//If the coming level is less than minHeight, then it will hold some water. 
+//Fill the water until we meet some "barrier" (with height larger than minHeight) and update l and r to repeat this process.
 
 int trap(vector<int>& height) {
         int l = 0, r = height.size() - 1, water = 0, minHeight = 0;

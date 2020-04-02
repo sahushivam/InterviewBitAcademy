@@ -1,0 +1,15 @@
+Min Stack
+	How does this approach work?
+	When element to be inserted is less than minEle, we insert “2x – minEle”. The important thing to notes is, 2x – minEle will always be less than x (proved below), i.e., new minEle and while popping out this element we will see that something unusual has happened as the popped element is less than the minEle. So we will be updating minEle”
+
+	push(x)
+		if(x<min_element)
+			push(2*x-min_element)
+		else 
+			push(x)
+
+	pop(x)
+		if(stk.top()<min_element)
+			min_element=2*min_element - stk.top()
+		stk.pop()
+		

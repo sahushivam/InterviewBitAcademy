@@ -1,0 +1,23 @@
+Bloom- Filters
+		It is used to check whether given element is present in the list or not present
+
+		It is a probabilistic data-structure
+			present  -- 90% sure
+			not present --100% sure
+		It takes less storage than hash table
+
+Working
+	an empty bloom filter is a bit array of m bits (all 0). There are also k hash functions that map each element to one of the m bits. So when we add a new element (URL) into the bloom filter, we will get k bits from the hash functions and set all of them to 1. Thus, when we check the existence of an element, we first get the k bits for it and if any of them is not 1, we know immediately that the element doesn’t exist. However, if all of the k bits are 1, this can come from the combination of several other elements.
+
+Probability of False positivity: Let m be the size of bit array, k be the number of hash functions and n be the number of expected elements to be inserted in the filter, then the probability of false positive p can be calculated as:
+
+P= (1-(1-1/m)^kn))^k
+
+Size of Bit Array: If expected number of elements n is known and desired false positive probability is p then the size of bit array m can be calculated as :
+
+m= -nlnP/(ln2)^2
+
+Optimum number of hash functions: The number of hash functions k must be a positive integer. If m is size of bit array and n is number of elements to be inserted, then k can be calculated as :
+
+k=m/n ln2
+

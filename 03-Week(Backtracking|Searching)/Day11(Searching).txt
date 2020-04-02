@@ -75,7 +75,8 @@ Sorting
 				low=mid+1;
 			else
 				high=mid-1
-
+			Approach 2: Quickselect
+			Approach 3: Using heap
 
 		Learn order statistics; find kth smallest element
 

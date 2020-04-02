@@ -1,0 +1,12 @@
+It is implemented with hashtable.
+
+std::unordered_set and std::unordered_map implementations that use open hashing, which means an array of buckets, each of which holds the head of a logical (and typically actual) list. That requirement is subtle: it's a consequence of the default max load factor being 1.0 and the guarantee that the table will not be rehashed unless grown beyond that load factor: that would be impractical without chaining, as the collisions with closed hashing become overwhelming as the load factor approaches 1:
+
+Implement Hashtable:
+
+Can you vector<vector<int>> hash;
+In implementation of hashtable we use a hash_function and compressor(modulo).
+
+Load factor
+	If n be the total number of buckets we decided to fill initially say 10 and let’s say 7 of them got filled now, so the load factor is 7/10=0.7.
+

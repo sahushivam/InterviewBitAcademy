@@ -1,0 +1,27 @@
+Sets are usually implemented as red-black trees.
+
+Red black tree- 
+	1) Every node has a color either red or black.
+	2) Root of tree is always black.
+	3) There are no two adjacent red nodes (A red node cannot have a red parent or red child).
+	4) Every path from a node (including root) to any of its descendant NULL node has the same number of black nodes.
+
+	Every Red Black Tree with n nodes has height <= 2Log2(n+1)
+
+The algorithms has mainly two cases depending upon the color of uncle. 
+	If uncle is red, we do recoloring. 
+	If uncle is black, we do rotations and/or recoloring.
+
+	How can I draw a red-black tree that is not an AVL tree structure wise?
+
+					Black
+					/	\
+				  Red	Black
+				  /	\	/	\
+				BLa Nil	Nil Nil
+				/ 
+			  Red
+			  / \ 
+			Nil Nil
+
+Most of the self-balancing BST library functions like map and set in C++ (OR TreeSet and TreeMap in Java) use Red Black Tree

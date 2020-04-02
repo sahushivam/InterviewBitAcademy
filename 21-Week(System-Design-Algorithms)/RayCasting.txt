@@ -1,0 +1,5 @@
+Ray casting is the most basic of many computer graphics rendering algorithms that use the geometric algorithm of ray tracing. Given a point with longitude and latitude, return the Country of the point.
+
+Determines whether a point is inside a polygon
+
+http://philliplemons.com/posts/ray-casting-algorithm

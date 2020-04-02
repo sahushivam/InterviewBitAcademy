@@ -1,0 +1,3 @@
+Frugal Streaming uses only one unit of memory per group to compute a quantile for each group
+
+Finding the majority element is the simplest

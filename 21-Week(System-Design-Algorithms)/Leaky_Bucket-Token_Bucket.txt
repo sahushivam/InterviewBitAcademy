@@ -1,0 +1,40 @@
+A mechanism to control the amount and the rate of the traffic sent to the network
+
+ rate limit our APIs
+ 	 Rate limiting is a critical component of an API product’s scalability.
+
+ 	 API owners typically measure processing limits in Transactions Per Second (TPS). Some systems may have physical limitations on data transference. Both are part of the Backend Rate Limiting.
+
+	To prevent an API from being overwhelmed, API owners often enforce a limit on the number of requests, or the quantity of data clients can consume. This is called Application Rate Limiting.
+
+Three Methods Of Implementing API Rate-Limiting
+	1- Request Queue
+		 library sets the rate limit at two requests per second and places the rest in a request queue.
+		a- Android Valley
+			Request queue library for android developer
+		b- Amazon Simple Queue Service
+	2-Throttling
+		Throttling is another common way to practically implement rate-limiting. It lets API developers control how their API is used by setting up a temporary state, allowing the API to assess each request. When the throttle is triggered, a user may either be disconnected or simply have their bandwidth reduced.
+	3- Rate limiting Algorithm
+		a- Leaky Bucket
+			The following is an algorithm for variable-length packets:
+
+				1- Initialize a counter to n at the tick of the clock.
+				2- If n is greater than the size of the packet, send the packet and decrement the counter by the packet size. Repeat this step until n is smaller than the packet size.
+				3- Reset the counter and go to step 1.
+
+		b- Token bucket
+			In this leaky bucket holds tokens generated at regular intervals of time.
+			If there is a ready packet , a token is removed from Bucket and packet is send.
+
+		c- Fixed window: 
+			Fixed-window limits—such as 3,000 requests per hour or 10 requests per day—are easy to state, but they are subject to spikes at the edges of the window, as available quota resets. Consider, for example, a limit of 3,000 requests per hour, which still allows for a spike of all 3,000 requests to be made in the first minute of the hour, which might overwhelm the service.
+		
+		d- Sliding window: 
+			Sliding windows have the benefits of a fixed window, but the rolling window of time smooths out bursts. Systems such as Redis facilitate this technique with expiring keys.
+
+		Advantage of token bucket over leaky bucket
+			If bucket is full in token Bucket , tokens are discard not packets. While in leaky bucket, packets are discarded.
+			
+			Token Bucket can send Large bursts at a faster rate while leaky bucket always sends packets at constant rate.
+
