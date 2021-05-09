@@ -1,4 +1,0 @@
-Pattern used to create object made from a bunch of other objects
-	like parking lot where we can design diferent parking lot based on strategy, single/multiple level, etc.
-
-	
