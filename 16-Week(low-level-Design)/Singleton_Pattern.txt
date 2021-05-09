@@ -1,4 +1,0 @@
-Why singletonn is bad?
-https://stackoverflow.com/questions/137975/what-is-so-bad-about-singletons/138012#138012
-
-1- Singletons do effectively create a global accessible set of 'stuff'
