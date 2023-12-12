@@ -1,0 +1,82 @@
+//BellMan Ford Algorithm
+Used to find shortest distance in negative weight
+
+// Relax all edges |V| - 1 times. A simple
+// shortest path from src to any other vertex can have
+// at-most |V| - 1 edges
+for (int i = 1; i <= V - 1; i++) {
+    for (int j = 0; j < E; j++) {
+        int u = graph->edge[j].src;
+        int v = graph->edge[j].dest;
+        int weight = graph->edge[j].weight;
+        if (dist[u] != INT_MAX
+            && dist[u] + weight < dist[v])
+            dist[v] = dist[u] + weight;
+    }
+}
+
+//Floyd Warshal - All pair shortest graph
+for(int i=0;i<V;i++) {
+  for(int j=0;j<V;j++)  {
+      for(int k=0;k<V;k++) {
+        dist[i][j] = min(dis[i][j] , dis[i]k]+dis[k][j]);
+        }
+    }
+}
+
+//Krusjkal Algorithm - Minimum spanning tree
+1. Sort edges by weight in ascending order
+2. Use disjoint set to find the tree
+
+//Kahn Algorithm
+vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
+        vector<vector<int>> graph(numCourses, vector<int>());
+        queue<int> nodes;
+        vector<int> indegrees(numCourses, 0);
+        int visit_node_size = 0;
+        vector<int> result;
+        
+        for (auto item : prerequisites) {
+            graph[item[1]].push_back(item[0]);
+            ++ indegrees[item[0]];
+        }
+        for (int node_id = 0; node_id < indegrees.size(); ++ node_id) {
+            if (indegrees[node_id] == 0) {
+                nodes.push(node_id);
+            }
+        }
+        //push the node in the queue which has indegree 0.
+        while (!nodes.empty()) {
+            ++ visit_node_size;
+            int node_id = nodes.front();
+            nodes.pop();
+            result.push_back(node_id);
+            for (auto neighber_id : graph[node_id]) {
+                -- indegrees[neighber_id];
+                if (indegrees[neighber_id] == 0) {
+                    nodes.push(neighber_id);
+                }
+            }
+        }
+        
+        return visit_node_size == numCourses ? result : vector<int>();
+    }
+
+// Kosaraju Algorithm
+https://takeuforward.org/graph/strongly-connected-components-kosarajus-algorithm-g-54/
+
+// Bridge in the graph
+void dfs(int curr, int prev) {
+        tin[curr] = low[curr] = time++;
+        for (int next : edgeMap[curr]) {
+            if (disc[next] == 0) {
+                dfs(next, curr);
+                tin[curr] = min(tin[curr], low[next]); //minimum of all the adjacent vertex except parent
+            } else if (next != prev)
+                low[curr] = min(low[curr], tin[next]);
+            if (low[next] > tin[curr]) 
+                ans.push_back({curr, next}); //if current time of child is greater than lowest time of parent then it is a bridge
+        }
+    }
+
+//Articulation point
